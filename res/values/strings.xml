@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+<string name="app_name">Uptime Widget</string>
+<string name="widget_name">Uptime Widget</string>
+<string name="days">days</string>
+<string name="mins">minutes</string>
+<string name="hours">hours</string>
+<string name="widget_loading">Loading ...</string>
+</resources>

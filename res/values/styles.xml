@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="WidgetBackground">
+		<item name="android:background">@drawable/widget_bg</item>
+	</style>
+
+	<style name="Text">
+	</style>
+
+	<style name="Text.Caption">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+	<style name="Text.Loading">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+	<style name="Text.ValueLand">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+	<style name="Text.ValuePort">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+	<style name="Text.LabelPort">
+		<item name="android:textSize">10sp</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+	
+	<style name="Text.LabelLand">
+		<item name="android:textSize">8sp</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+</resources>
