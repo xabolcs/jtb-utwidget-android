@@ -9,35 +9,58 @@
 	</style>
 
 	<style name="Text.Caption">
-		<item name="android:textSize">14sp</item>
+		<item name="android:textSize">10sp</item>
+		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">@android:color/black</item>
 	</style>
 
 	<style name="Text.Loading">
-		<item name="android:textSize">14sp</item>
+		<item name="android:textSize">12sp</item>
 		<item name="android:textColor">@android:color/black</item>
 	</style>
 
 	<style name="Text.ValueLand">
+		<item name="android:textSize">12sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+	<style name="Text.ValueLandMax">
+		<item name="android:textSize">12sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#666666</item>
+	</style>
+
+	<style name="Text.ValuePort">
 		<item name="android:textSize">14sp</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">@android:color/black</item>
 	</style>
 
-	<style name="Text.ValuePort">
-		<item name="android:textSize">18sp</item>
+	<style name="Text.ValuePortMax">
+		<item name="android:textSize">14sp</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@android:color/black</item>
+		<item name="android:textColor">#666666</item>
 	</style>
 
 	<style name="Text.LabelPort">
 		<item name="android:textSize">10sp</item>
 		<item name="android:textColor">@android:color/black</item>
 	</style>
+
+	<style name="Text.LabelPortMax">
+		<item name="android:textSize">10sp</item>
+		<item name="android:textColor">#666666</item>
+	</style>
 	
 	<style name="Text.LabelLand">
 		<item name="android:textSize">8sp</item>
 		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+	<style name="Text.LabelLandMax">
+		<item name="android:textSize">8sp</item>
+		<item name="android:textColor">#666666</item>
 	</style>
 
 </resources>
