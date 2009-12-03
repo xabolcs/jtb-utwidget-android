@@ -19,6 +19,19 @@ public class UptimeWidget extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
 		context.startService(new Intent(context, UpdateService.class));
+		schedule(context);
+	}
+
+	private void schedule(Context context) {
+		Intent updateIntent = new Intent();
+		updateIntent.setClass(context, UpdateService.class);
+		PendingIntent pendingIntent = PendingIntent.getService(context, 0,
+				updateIntent, 0);
+		AlarmManager alarmManager = (AlarmManager) context
+				.getSystemService(Context.ALARM_SERVICE);
+		alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
+				SystemClock.elapsedRealtime(),
+				AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
 	}
 
 	public static class UpdateService extends Service {
@@ -35,19 +48,7 @@ public class UptimeWidget extends AppWidgetProvider {
 			AppWidgetManager manager = AppWidgetManager.getInstance(this);
 			manager.updateAppWidget(thisWidget, updateViews);
 
-			schedule();
 			stopSelf();
-		}
-
-		private void schedule() {
-			Intent updateIntent = new Intent();
-			updateIntent.setClass(this, UpdateService.class);
-			PendingIntent pendingIntent = PendingIntent.getService(this, 0,
-					updateIntent, 0);
-			AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-			alarmManager.set(AlarmManager.ELAPSED_REALTIME, SystemClock
-					.elapsedRealtime()
-					+ DateUtils.MINUTE_IN_MILLIS, pendingIntent);
 		}
 
 		public RemoteViews buildUpdate(Context context) {
