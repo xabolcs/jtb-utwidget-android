@@ -22,6 +22,12 @@ public class UptimeWidget extends AppWidgetProvider {
 		schedule(context);
 	}
 
+	@Override
+	public void onDisabled(Context context) {
+		Log.d("UptimeWidget", "cancelled");
+		cancel(context);
+	}
+
 	private void schedule(Context context) {
 		Intent updateIntent = new Intent();
 		updateIntent.setClass(context, UpdateService.class);
@@ -32,6 +38,16 @@ public class UptimeWidget extends AppWidgetProvider {
 		alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
 				SystemClock.elapsedRealtime(),
 				AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+	}
+
+	private void cancel(Context context) {
+		Intent intent = new Intent();
+		intent.setClass(context, UpdateService.class);
+		PendingIntent pendingIntent = PendingIntent.getService(context, 0,
+				intent, 0);
+		AlarmManager alarmManager = (AlarmManager) context
+				.getSystemService(Context.ALARM_SERVICE);
+		alarmManager.cancel(pendingIntent);
 	}
 
 	public static class UpdateService extends Service {
@@ -57,16 +73,15 @@ public class UptimeWidget extends AppWidgetProvider {
 
 			long ert = SystemClock.elapsedRealtime();
 			long nert = ert;
-			
+
 			long days = nert / DateUtils.DAY_IN_MILLIS;
 			nert -= days * DateUtils.DAY_IN_MILLIS;
-			
+
 			long hours = nert / DateUtils.HOUR_IN_MILLIS;
 			nert -= hours * DateUtils.HOUR_IN_MILLIS;
 
 			long mins = nert / DateUtils.MINUTE_IN_MILLIS;
 			nert -= mins * DateUtils.MINUTE_IN_MILLIS;
-			
 
 			updateViews.setTextViewText(R.id.days_text, String.format("%3d",
 					days));
@@ -81,20 +96,20 @@ public class UptimeWidget extends AppWidgetProvider {
 				prefs.setMaxUptime(ert);
 				mert = ert;
 			}
-			
+
 			long mdays = mert / DateUtils.DAY_IN_MILLIS;
 			mert -= mdays * DateUtils.DAY_IN_MILLIS;
-			
+
 			long mhours = mert / DateUtils.HOUR_IN_MILLIS;
 			mert -= mhours * DateUtils.HOUR_IN_MILLIS;
 
 			long mmins = mert / DateUtils.MINUTE_IN_MILLIS;
 			mert -= mmins * DateUtils.MINUTE_IN_MILLIS;
-			
+
 			updateViews.setTextViewText(R.id.maxdays_text, String.format("%3d",
 					mdays));
-			updateViews.setTextViewText(R.id.maxhours_text, String.format("%3d",
-					mhours));
+			updateViews.setTextViewText(R.id.maxhours_text, String.format(
+					"%3d", mhours));
 			updateViews.setTextViewText(R.id.maxmins_text, String.format("%3d",
 					mmins));
 

@@ -55,7 +55,7 @@
 		android:layout_marginTop="2dip" android:layout_below="@+id/icon"
 		android:layout_toRightOf="@id/days_label" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:singleLine="true"
-		android:typeface="monospace" style="@style/Text.ValuePort" />
+		android:typeface="monospace" style="@style/Text.ValuePortMax" />
 
 	<TextView android:id="@+id/maxdays_label" android:text="@string/days"
 		android:layout_width="wrap_content" android:layout_alignTop="@+id/maxdays_text"
