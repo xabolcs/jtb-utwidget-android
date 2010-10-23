@@ -1,5 +1,7 @@
 package org.jtb.utwidget;
 
+import org.jtb.utwidget.light.R;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -37,9 +39,19 @@ public class UptimeWidget extends AppWidgetProvider {
 				.getSystemService(Context.ALARM_SERVICE);
 		alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
 				SystemClock.elapsedRealtime(),
-				AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+				getUpdateInterval(), pendingIntent);
 	}
 
+	private static long getUpdateInterval() {
+		long ert = SystemClock.elapsedRealtime();
+
+		long days = ert / DateUtils.DAY_IN_MILLIS;
+		if (days > 7) {
+			return AlarmManager.INTERVAL_HOUR;
+		}
+		return AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+	}
+	
 	private void cancel(Context context) {
 		Intent intent = new Intent();
 		intent.setClass(context, UpdateService.class);
@@ -75,6 +87,7 @@ public class UptimeWidget extends AppWidgetProvider {
 			long nert = ert;
 
 			long days = nert / DateUtils.DAY_IN_MILLIS;
+			//long days = 789;
 			nert -= days * DateUtils.DAY_IN_MILLIS;
 
 			long hours = nert / DateUtils.HOUR_IN_MILLIS;
@@ -98,12 +111,15 @@ public class UptimeWidget extends AppWidgetProvider {
 			}
 
 			long mdays = mert / DateUtils.DAY_IN_MILLIS;
+			//long mdays = 123;
 			mert -= mdays * DateUtils.DAY_IN_MILLIS;
 
 			long mhours = mert / DateUtils.HOUR_IN_MILLIS;
+			//long mhours = 24;
 			mert -= mhours * DateUtils.HOUR_IN_MILLIS;
 
 			long mmins = mert / DateUtils.MINUTE_IN_MILLIS;
+			//long mmins = 55;
 			mert -= mmins * DateUtils.MINUTE_IN_MILLIS;
 
 			updateViews.setTextViewText(R.id.maxdays_text, String.format("%3d",
