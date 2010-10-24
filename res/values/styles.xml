@@ -128,8 +128,15 @@
 		<item name="android:textColor">@color/darkmax</item>
 	</style>
 	
-	<style name="Radio">
-		<item name="android:textSize">12px</item>
+	<style name="Config"/>
+	
+	<style name="Config.Title">
+		<item name="android:textSize">24px</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@android:color/white</item>
+	</style>
+	<style name="Config.Radio">
+		<item name="android:textSize">16px</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 </resources>

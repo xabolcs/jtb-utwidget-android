@@ -6,11 +6,9 @@
 
 	<FrameLayout android:id="@+id/frame"
 		android:layout_marginTop="10dip" android:layout_marginBottom="6dip"
-				android:layout_marginRight="16dip"
-		android:layout_height="fill_parent"
-		android:layout_width="fill_parent"
-		android:background="@color/darktranslucent"/>
-		
+		android:layout_marginRight="16dip" android:layout_height="fill_parent"
+		android:layout_width="fill_parent" android:background="@color/darktranslucent" />
+
 	<ImageView android:id="@+id/icon" android:layout_width="wrap_content"
 		android:layout_marginLeft="10dip" android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true" android:src="@drawable/icon_small" />
@@ -22,10 +20,11 @@
 		android:layout_width="wrap_content" />
 
 	<TextView android:id="@+id/days_text" android:text="898"
-		android:layout_marginTop="4dip" android:layout_below="@+id/icon"
-		android:layout_alignParentLeft="true" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:singleLine="true"
-		android:typeface="monospace" style="@style/DarkTransparent.Text.ValueLand" />
+		android:layout_marginLeft="4dip" android:layout_marginTop="4dip"
+		android:layout_below="@+id/icon" android:layout_alignParentLeft="true"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:singleLine="true" android:typeface="monospace"
+		style="@style/DarkTransparent.Text.ValueLand" />
 
 	<TextView android:id="@+id/days_label" android:text="@string/days"
 		android:layout_width="wrap_content" android:layout_alignTop="@+id/days_text"
@@ -34,11 +33,11 @@
 		android:includeFontPadding="false" />
 
 	<TextView android:id="@+id/hours_text" android:text="1"
-		android:layout_marginTop="2dip" android:layout_height="wrap_content"
-		android:layout_alignTop="@+id/days_text" android:layout_toRightOf="@+id/days_label"
-		android:singleLine="true" style="@style/DarkTransparent.Text.ValueLand"
-		android:typeface="monospace" android:includeFontPadding="false"
-		android:layout_width="wrap_content" />
+		android:layout_marginTop="2dip"
+		android:layout_height="wrap_content" android:layout_alignTop="@+id/days_text"
+		android:layout_toRightOf="@+id/days_label" android:singleLine="true"
+		style="@style/DarkTransparent.Text.ValueLand" android:typeface="monospace"
+		android:includeFontPadding="false" android:layout_width="wrap_content" />
 
 	<TextView android:id="@+id/hours_label" android:text="@string/hours"
 		android:layout_width="wrap_content" android:layout_toRightOf="@id/hours_text"
@@ -47,11 +46,11 @@
 		style="@style/DarkTransparent.Text.LabelLand" />
 
 	<TextView android:id="@+id/mins_text" android:text="1"
-		android:layout_marginTop="2dip" android:layout_alignTop="@+id/days_text"
-		android:layout_height="wrap_content" android:layout_toRightOf="@+id/hours_label"
-		android:singleLine="true" android:includeFontPadding="false"
-		style="@style/DarkTransparent.Text.ValueLand" android:typeface="monospace"
-		android:layout_width="wrap_content" />
+		android:layout_marginTop="2dip"
+		android:layout_alignTop="@+id/days_text" android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/hours_label" android:singleLine="true"
+		android:includeFontPadding="false" style="@style/DarkTransparent.Text.ValueLand"
+		android:typeface="monospace" android:layout_width="wrap_content" />
 
 	<TextView android:id="@+id/mins_label" android:text="@string/mins"
 		android:layout_width="wrap_content" android:layout_toRightOf="@id/mins_text"
@@ -60,6 +59,7 @@
 		style="@style/DarkTransparent.Text.LabelLand" />
 
 	<TextView android:id="@+id/maxdays_text" android:text="898"
+	android:layout_marginLeft="4dip"
 		android:layout_marginTop="2dip" android:layout_below="@+id/days_text"
 		android:layout_alignParentLeft="true" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:singleLine="true"

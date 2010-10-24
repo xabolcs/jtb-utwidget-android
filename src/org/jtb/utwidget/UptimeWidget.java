@@ -129,6 +129,10 @@ public class UptimeWidget extends AppWidgetProvider {
 		long mins = nert / DateUtils.MINUTE_IN_MILLIS;
 		nert -= mins * DateUtils.MINUTE_IN_MILLIS;
 
+		//days = 888;
+		//hours = 59;
+		//mins = 59;
+
 		updateViews.setTextViewText(R.id.days_text,
 				String.format("%3d", days));
 		updateViews.setTextViewText(R.id.hours_text,
@@ -154,6 +158,10 @@ public class UptimeWidget extends AppWidgetProvider {
 		// long mmins = 55;
 		mert -= mmins * DateUtils.MINUTE_IN_MILLIS;
 
+		//mdays = 888;
+		//mhours = 59;
+		//mmins = 59;
+		
 		updateViews.setTextViewText(R.id.maxdays_text,
 				String.format("%3d", mdays));
 		updateViews.setTextViewText(R.id.maxhours_text,
