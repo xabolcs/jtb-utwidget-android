@@ -93,12 +93,6 @@ public class UptimeWidget extends AppWidgetProvider {
 	}
 
 	private static long getUpdateInterval() {
-		long ert = SystemClock.elapsedRealtime();
-
-		long days = ert / DateUtils.DAY_IN_MILLIS;
-		if (days > 7) {
-			return AlarmManager.INTERVAL_HOUR;
-		}
 		return AlarmManager.INTERVAL_FIFTEEN_MINUTES;
 	}
 
