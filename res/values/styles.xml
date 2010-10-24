@@ -1,64 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<style name="LightTransparent">
+	</style>
 
-	<style name="WidgetBackground">
+	<style name="LightTransparent.Background">
 		<item name="android:background">@android:color/transparent</item>
 	</style>
 
-	<style name="Text">
+	<style name="LightTransparent.Text">
 	</style>
 
-	<style name="Text.Caption">
+	<style name="LightTransparent.Text.Caption">
 		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">@android:color/white</item>
+		<item name="android:textColor">@color/light</item>
 	</style>
 
-	<style name="Text.Loading">
+	<style name="LightTransparent.Text.Loading">
 		<item name="android:textSize">12sp</item>
-		<item name="android:textColor">@android:color/white</item>
+		<item name="android:textColor">@color/light</item>
 	</style>
 
-	<style name="Text.ValueLand">
-		<item name="android:textSize">12sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@android:color/white</item>
-	</style>
-
-	<style name="Text.ValueLandMax">
+	<style name="LightTransparent.Text.ValueLand">
 		<item name="android:textSize">12sp</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">#cccccc</item>
+		<item name="android:textColor">@color/light</item>
 	</style>
 
-	<style name="Text.ValuePort">
+	<style name="LightTransparent.Text.ValueLandMax">
+		<item name="android:textSize">12sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@color/lightmax</item>
+	</style>
+
+	<style name="LightTransparent.Text.ValuePort">
 		<item name="android:textSize">14sp</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@android:color/white</item>
+		<item name="android:textColor">@color/light</item>
 	</style>
 
-	<style name="Text.ValuePortMax">
+	<style name="LightTransparent.Text.ValuePortMax">
 		<item name="android:textSize">14sp</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">#cccccc</item>
+		<item name="android:textColor">@color/lightmax</item>
 	</style>
 
-	<style name="Text.LabelPort">
+	<style name="LightTransparent.Text.LabelPort">
 		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">@android:color/white</item>
+		<item name="android:textColor">@color/light</item>
 	</style>
 
-	<style name="Text.LabelPortMax">
+	<style name="LightTransparent.Text.LabelPortMax">
 		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">#cccccc</item>
+		<item name="android:textColor">@color/lightmax</item>
 	</style>
 
-	<style name="Text.LabelLand">
+	<style name="LightTransparent.Text.LabelLand">
 		<item name="android:textSize">8sp</item>
-		<item name="android:textColor">@android:color/white</item>
+		<item name="android:textColor">@color/light</item>
 	</style>
 
-	<style name="Text.LabelLandMax">
+	<style name="LightTransparent.Text.LabelLandMax">
 		<item name="android:textSize">8sp</item>
-		<item name="android:textColor">#cccccc</item>
+		<item name="android:textColor">@color/lightmax</item>
+	</style>
+
+	<style name="DarkTransparent">
+	</style>
+
+	<style name="DarkTransparent.Background">
+		<item name="android:background">@android:color/transparent</item>
+	</style>
+
+	<style name="DarkTransparent.Text">
+	</style>
+
+	<style name="DarkTransparent.Text.Caption">
+		<item name="android:textSize">10sp</item>
+		<item name="android:textColor">@color/dark</item>
+	</style>
+
+	<style name="DarkTransparent.Text.Loading">
+		<item name="android:textSize">12sp</item>
+		<item name="android:textColor">@color/dark</item>
+	</style>
+
+	<style name="DarkTransparent.Text.ValueLand">
+		<item name="android:textSize">12sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@color/dark</item>
+	</style>
+
+	<style name="DarkTransparent.Text.ValueLandMax">
+		<item name="android:textSize">12sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@color/darkmax</item>
+	</style>
+
+	<style name="DarkTransparent.Text.ValuePort">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@color/dark</item>
+	</style>
+
+	<style name="DarkTransparent.Text.ValuePortMax">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@color/darkmax</item>
+	</style>
+
+	<style name="DarkTransparent.Text.LabelPort">
+		<item name="android:textSize">10sp</item>
+		<item name="android:textColor">@color/dark</item>
+	</style>
+
+	<style name="DarkTransparent.Text.LabelPortMax">
+		<item name="android:textSize">10sp</item>
+		<item name="android:textColor">@color/darkmax</item>
+	</style>
+
+	<style name="DarkTransparent.Text.LabelLand">
+		<item name="android:textSize">8sp</item>
+		<item name="android:textColor">@color/dark</item>
+	</style>
+
+	<style name="DarkTransparent.Text.LabelLandMax">
+		<item name="android:textSize">8sp</item>
+		<item name="android:textColor">@color/darkmax</item>
+	</style>
+	
+	<style name="Radio">
+		<item name="android:textSize">12px</item>
+		<item name="android:textStyle">bold</item>
 	</style>
 </resources>

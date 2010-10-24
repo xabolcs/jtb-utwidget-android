@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout android:id="@+id/LinearLayout01"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView android:text="Select theme for Uptime Widget" style="ConfigTitle" android:id="@+id/TextView01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:textSize="16px"></TextView>
+	<RadioGroup android:id="@+id/RadioGroup01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<RadioButton style="@style/Radio" android:text="Dark, Transparent" android:id="@+id/darkTransparentRadioButton"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+		<RadioButton style="@style/Radio" android:text="Dark, Translucent" android:id="@+id/darkTranslucentRadioButton"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+		<RadioButton style="@style/Radio" android:text="Light, Transparent" android:id="@+id/lightTransparentRadioButton"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+		<RadioButton style="@style/Radio" android:text="Light, Translucent" android:id="@+id/lightTranslucentRadioButton"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+	</RadioGroup>
+
+
+</LinearLayout>
