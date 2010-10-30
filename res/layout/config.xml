@@ -10,12 +10,14 @@
 	<RadioGroup android:id="@+id/RadioGroup01"
 		android:layout_width="wrap_content" android:layout_height="wrap_content">
 		<RadioButton style="@style/Config.Radio" android:text="Dark, Transparent" android:id="@+id/darkTransparentRadioButton"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:tag="darktransparent"/>
 		<RadioButton style="@style/Config.Radio" android:text="Dark, Translucent" android:id="@+id/darkTranslucentRadioButton"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:tag="darktranslucent"/>
 		<RadioButton style="@style/Config.Radio" android:text="Light, Transparent" android:id="@+id/lightTransparentRadioButton"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:tag="lighttransparent"/>
 		<RadioButton style="@style/Config.Radio" android:text="Light, Translucent" android:id="@+id/lightTranslucentRadioButton"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:tag="lighttranslucent"/>
+		<RadioButton style="@style/Config.Radio" android:text="Cold Metal" android:id="@+id/coldMetalRadioButton"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:tag="coldmetal"/>
 	</RadioGroup>
 </LinearLayout>

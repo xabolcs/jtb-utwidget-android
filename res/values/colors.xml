@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <color name="lighttranslucent">#aa666666</color>
-    <color name="darktranslucent">#aadddddd</color>
+    <color name="lighttranslucent">#99111111</color>
+    <color name="darktranslucent">#99eeeeee</color>
     <color name="dark">#000000</color>
     <color name="darkmax">#666666</color>
     <color name="light">#ffffff</color>

@@ -15,6 +15,7 @@ public class ConfigActivity extends Activity {
 	private RadioButton mLightTransparentRadioButton;
 	private RadioButton mDarkTranslucentRadioButton;
 	private RadioButton mLightTranslucentRadioButton;
+	private RadioButton mColdMetalRadioButton;
 	private int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
 	
 	@Override
@@ -37,46 +38,29 @@ public class ConfigActivity extends Activity {
             finish();
         }
 		mPrefs = new Prefs(this);
-	    
-		mDarkTransparentRadioButton = (RadioButton) findViewById(R.id.darkTransparentRadioButton);
+
 		OnClickListener ocl = new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				finish("darktransparent");
+				finish((String)v.getTag());
 			}
 		};
+
+		mDarkTransparentRadioButton = (RadioButton) findViewById(R.id.darkTransparentRadioButton);
 		mDarkTransparentRadioButton.setOnClickListener(ocl);
 
 		mDarkTranslucentRadioButton = (RadioButton) findViewById(R.id.darkTranslucentRadioButton);
-		ocl = new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				finish("darktranslucent");
-			}
-		};
 		mDarkTranslucentRadioButton.setOnClickListener(ocl);
 
 		mLightTransparentRadioButton = (RadioButton) findViewById(R.id.lightTransparentRadioButton);
-		ocl = new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				finish("lighttransparent");
-			}
-		};
 		mLightTransparentRadioButton.setOnClickListener(ocl);
 
 		mLightTranslucentRadioButton = (RadioButton) findViewById(R.id.lightTranslucentRadioButton);
-		ocl = new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				finish("lighttranslucent");
-			}
-		};
 		mLightTranslucentRadioButton.setOnClickListener(ocl);
+
+		mColdMetalRadioButton = (RadioButton) findViewById(R.id.coldMetalRadioButton);
+		mColdMetalRadioButton.setOnClickListener(ocl);
 	}
 	
 	private void finish(String theme) {

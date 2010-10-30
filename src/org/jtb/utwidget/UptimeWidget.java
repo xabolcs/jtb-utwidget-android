@@ -25,6 +25,7 @@ public class UptimeWidget extends AppWidgetProvider {
 			put("lighttransparent", R.layout.widget_lighttransparent);
 			put("darktranslucent", R.layout.widget_darktranslucent);
 			put("lighttranslucent", R.layout.widget_lighttranslucent);
+			put("coldmetal", R.layout.widget_coldmetal);
 		}
 	};
 
