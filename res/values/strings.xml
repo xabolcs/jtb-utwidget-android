@@ -7,5 +7,8 @@
 <string name="mins">m</string>
 <string name="hours">h</string>
 <string name="widget_loading">Loading ...</string>
+<string name="finished">Finished</string>
+<string name="uptime">uptime</string>
+<string name="waketime">wktime</string>
 
 </resources>

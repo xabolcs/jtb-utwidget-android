@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.RadioButton;
 
 public class ConfigActivity extends Activity {
@@ -16,6 +17,13 @@ public class ConfigActivity extends Activity {
 	private RadioButton mDarkTranslucentRadioButton;
 	private RadioButton mLightTranslucentRadioButton;
 	private RadioButton mColdMetalRadioButton;
+	private RadioButton mUptimeRadioButton;
+	private RadioButton mWaketimeRadioButton;
+	private Button mFinishedButton;
+	
+	private Mode mMode = Mode.UPTIME;
+	private String mTheme = "darktransparent";
+	
 	private int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
 	
 	@Override
@@ -39,32 +47,57 @@ public class ConfigActivity extends Activity {
         }
 		mPrefs = new Prefs(this);
 
-		OnClickListener ocl = new OnClickListener() {
+		OnClickListener themeOcl = new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				finish((String)v.getTag());
+				mTheme = (String)v.getTag();
 			}
 		};
 
 		mDarkTransparentRadioButton = (RadioButton) findViewById(R.id.darkTransparentRadioButton);
-		mDarkTransparentRadioButton.setOnClickListener(ocl);
-
+		mDarkTransparentRadioButton.setOnClickListener(themeOcl);
+		mDarkTransparentRadioButton.setChecked(true);
+		
 		mDarkTranslucentRadioButton = (RadioButton) findViewById(R.id.darkTranslucentRadioButton);
-		mDarkTranslucentRadioButton.setOnClickListener(ocl);
+		mDarkTranslucentRadioButton.setOnClickListener(themeOcl);
 
 		mLightTransparentRadioButton = (RadioButton) findViewById(R.id.lightTransparentRadioButton);
-		mLightTransparentRadioButton.setOnClickListener(ocl);
+		mLightTransparentRadioButton.setOnClickListener(themeOcl);
 
 		mLightTranslucentRadioButton = (RadioButton) findViewById(R.id.lightTranslucentRadioButton);
-		mLightTranslucentRadioButton.setOnClickListener(ocl);
+		mLightTranslucentRadioButton.setOnClickListener(themeOcl);
 
 		mColdMetalRadioButton = (RadioButton) findViewById(R.id.coldMetalRadioButton);
-		mColdMetalRadioButton.setOnClickListener(ocl);
+		mColdMetalRadioButton.setOnClickListener(themeOcl);
+		
+		OnClickListener modeOcl = new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				mMode = Mode.valueOf((String)v.getTag());
+			}
+		};
+
+		mUptimeRadioButton = (RadioButton) findViewById(R.id.uptimeRadioButton);
+		mUptimeRadioButton.setOnClickListener(modeOcl);
+		mUptimeRadioButton.setChecked(true);
+		
+		mWaketimeRadioButton = (RadioButton) findViewById(R.id.waketimeRadioButton);
+		mWaketimeRadioButton.setOnClickListener(modeOcl);
+		
+		mFinishedButton = (Button) findViewById(R.id.config_finished_button);
+		mFinishedButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				finished();
+			}
+		});
 	}
 	
-	private void finish(String theme) {
-		mPrefs.setTheme(theme, mAppWidgetId);
+	private void finished() {
+		mPrefs.setTheme(mTheme, mAppWidgetId);
+		mPrefs.setMode(mMode, mAppWidgetId);
 
 		AppWidgetManager mgr = AppWidgetManager.getInstance(ConfigActivity.this);				
 		UptimeWidget.update(ConfigActivity.this, mgr, mAppWidgetId);

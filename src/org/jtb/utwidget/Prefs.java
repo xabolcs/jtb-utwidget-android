@@ -8,7 +8,7 @@ import android.preference.PreferenceManager;
 
 public class Prefs {
 	private Context context = null;
-	
+
 	public Prefs(Context context) {
 		this.context = context;
 	}
@@ -42,20 +42,50 @@ public class Prefs {
 		e.putString(key, Long.toString(val));
 		e.commit();
 	}
+	
+	private void remove(String key) {
+		SharedPreferences prefs = PreferenceManager
+		.getDefaultSharedPreferences(context);
+		Editor e = prefs.edit();
+		e.remove(key);
+		e.commit();
+	}
 
-	public long getMaxUptime() {
-		return getLong("maxUptime", 0);
+	public long getMax(Mode mode) {
+		// backwards compatibility
+		// if the user has the legacy preference
+		// "maxUptime", set it in the new format
+		// and remove the old legacy pref
+		
+		if (mode == Mode.UPTIME) {
+			long maxUptime = getLong("maxUptime", -1);
+			if (maxUptime != -1) {
+				setMax(maxUptime, Mode.UPTIME);
+				remove("maxUptime");
+			}
+		}
+		
+		return getLong("max." + mode.toString(), 0);
 	}
-	
-	public void setMaxUptime(long maxUptime) {
-		setLong("maxUptime", maxUptime);
+
+	public void setMax(long max, Mode mode) {
+		setLong("max." + mode.toString(), max);
 	}
-	
+
 	public String getTheme(int id) {
 		return getString("theme." + id, "lighttransparent");
 	}
-	
+
 	public void setTheme(String theme, int id) {
 		setString("theme." + id, theme);
+	}
+
+	public Mode getMode(int id) {
+		String s = getString("mode." + id, "UPTIME");
+		return Mode.valueOf(s);
+	}
+
+	public void setMode(Mode mode, int id) {
+		setString("mode." + id, mode.toString());
 	}
 }

@@ -13,7 +13,7 @@
 		android:layout_marginLeft="10dip" android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true" android:src="@drawable/icon_small" />
 
-	<TextView android:id="@+id/uptime_text" android:text="uptime"
+	<TextView android:id="@+id/uptime_text"
 		android:layout_height="wrap_content" android:layout_toRightOf="@+id/icon"
 		android:layout_alignBottom="@+id/icon" android:singleLine="true"
 		android:includeFontPadding="false" style="@style/DarkTransparent.Text.Caption"
