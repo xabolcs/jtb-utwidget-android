@@ -169,7 +169,7 @@ public class UptimeWidget extends AppWidgetProvider {
 				.getString(mode.getStringId()));
 		
 		Intent i = getUpdateIntent(context, id);
-		PendingIntent pi = PendingIntent.getActivity(context, 0, i, 0);
+		PendingIntent pi = PendingIntent.getBroadcast(context, 0, i, 0);
 		updateViews.setOnClickPendingIntent(R.id.widget, pi);
 		
 		return updateViews;
