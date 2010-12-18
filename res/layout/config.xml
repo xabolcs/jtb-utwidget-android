@@ -1,45 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="@drawable/coldmetal_bg"
-	xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout android:layout_width="fill_parent"
+	android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
 	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="fill_parent" android:orientation="vertical"
-		xmlns:android="http://schemas.android.com/apk/res/android">
-		<TextView android:text="Select theme ..." style="@style/Config.Title"
-			android:id="@+id/TextView01" android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
-		<RadioGroup android:id="@+id/RadioGroup01"
-			android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<RadioButton style="@style/Config.Radio" android:text="Dark, Transparent"
-				android:id="@+id/darkTransparentRadioButton" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:tag="darktransparent" />
-			<RadioButton style="@style/Config.Radio" android:text="Dark, Translucent"
-				android:id="@+id/darkTranslucentRadioButton" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:tag="darktranslucent" />
-			<RadioButton style="@style/Config.Radio" android:text="Light, Transparent"
-				android:id="@+id/lightTransparentRadioButton" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:tag="lighttransparent" />
-			<RadioButton style="@style/Config.Radio" android:text="Light, Translucent"
-				android:id="@+id/lightTranslucentRadioButton" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:tag="lighttranslucent" />
-			<RadioButton style="@style/Config.Radio" android:text="Cold Metal"
-				android:id="@+id/coldMetalRadioButton" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:tag="coldmetal" />
-		</RadioGroup>
-		<TextView android:text="Select mode ..." style="@style/Config.Title"
-			android:paddingTop="8dp" android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
-		<RadioGroup android:layout_width="wrap_content"
-			android:orientation="horizontal" android:layout_height="wrap_content">
-			<RadioButton style="@style/Config.Radio" android:text="Uptime"
-				android:id="@+id/uptimeRadioButton" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:tag="UPTIME" />
-			<RadioButton style="@style/Config.Radio" android:text="Waketime"
-				android:id="@+id/waketimeRadioButton" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:tag="WAKETIME" />
-		</RadioGroup>
-		<Button android:id="@+id/config_finished_button"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:gravity="center" android:text="@string/finished" />
+		android:id="@+id/mode_layout" android:layout_alignParentTop="true"
+		android:layout_alignParentRight="true" android:layout_height="wrap_content"
+		android:orientation="horizontal" xmlns:android="http://schemas.android.com/apk/res/android">
+		<TextView android:text="Theme" style="@style/Config.Title"
+			android:id="@+id/TextView01" android:layout_width="75dp"
+			android:layout_height="wrap_content" />
+		<Spinner android:id="@+id/theme_spinner" android:layout_width="wrap_content"
+			android:layout_height="wrap_content"></Spinner>
 	</LinearLayout>
-</ScrollView>
+	<LinearLayout android:layout_width="fill_parent"
+		android:id="@+id/theme_layout" android:layout_alignLeft="@id/mode_layout"
+		android:layout_below="@id/mode_layout" android:layout_height="wrap_content"
+		android:orientation="horizontal" xmlns:android="http://schemas.android.com/apk/res/android">
+		<TextView android:text="Mode" style="@style/Config.Title"
+			android:paddingTop="8dp" android:layout_width="75dp"
+			android:layout_height="wrap_content" />
+		<Spinner android:id="@+id/mode_spinner" android:layout_width="wrap_content"
+			android:layout_height="wrap_content"></Spinner>
+	</LinearLayout>
+	<Button android:id="@+id/config_finished_button"
+		android:layout_alignParentBottom="true" android:layout_width="200dp"
+		android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+		android:text="@string/finished" />
+</RelativeLayout>

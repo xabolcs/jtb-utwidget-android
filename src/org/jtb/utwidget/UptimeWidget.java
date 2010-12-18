@@ -1,6 +1,5 @@
 package org.jtb.utwidget;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import android.app.AlarmManager;
@@ -16,16 +15,6 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 public class UptimeWidget extends AppWidgetProvider {
-	private static Map<String, Integer> THEME_MAP = new HashMap<String, Integer>() {
-		{
-			put("darktransparent", R.layout.widget_darktransparent);
-			put("lighttransparent", R.layout.widget_lighttransparent);
-			put("darktranslucent", R.layout.widget_darktranslucent);
-			put("lighttranslucent", R.layout.widget_lighttranslucent);
-			put("coldmetal", R.layout.widget_coldmetal);
-		}
-	};
-
 	@Override
 	public void onUpdate(Context context, AppWidgetManager mgr,
 			int[] appWidgetIds) {
@@ -45,7 +34,7 @@ public class UptimeWidget extends AppWidgetProvider {
 		}
 	}
 
-	private static Intent getUpdateIntent(Context context, int id) {
+	static Intent getUpdateIntent(Context context, int id) {
 		Intent updateIntent = new Intent();
 		updateIntent.setClass(context, UptimeWidget.class);
 		updateIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
@@ -93,85 +82,10 @@ public class UptimeWidget extends AppWidgetProvider {
 	}
 
 	public static void update(Context context, AppWidgetManager mgr, int id) {
-		RemoteViews updateViews = buildUpdate(context, id);
-		mgr.updateAppWidget(id, updateViews);
-	}
-
-	private static RemoteViews buildUpdate(Context context, int id) {
 		Prefs prefs = new Prefs(context);
-		String theme = prefs.getTheme(id);
 		Mode mode = prefs.getMode(id);
-		
-		Log.d("UptimeWidget", "using theme: " + theme);
-
-		int layoutId = THEME_MAP.get(theme);
-		RemoteViews updateViews = new RemoteViews(context.getPackageName(),
-				layoutId);
-
-		
-		long time;
-		if (mode == Mode.UPTIME) {
-			time = SystemClock.elapsedRealtime();
-		} else {
-			time = SystemClock.uptimeMillis();
-		}
-		long ntime = time;
-
-		long days = ntime / DateUtils.DAY_IN_MILLIS;
-		// long days = 789;
-		ntime -= days * DateUtils.DAY_IN_MILLIS;
-
-		long hours = ntime / DateUtils.HOUR_IN_MILLIS;
-		ntime -= hours * DateUtils.HOUR_IN_MILLIS;
-
-		long mins = ntime / DateUtils.MINUTE_IN_MILLIS;
-		ntime -= mins * DateUtils.MINUTE_IN_MILLIS;
-
-		// days = 888;
-		// hours = 59;
-		// mins = 59;
-
-		updateViews.setTextViewText(R.id.days_text, String.format("%3d", days));
-		updateViews.setTextViewText(R.id.hours_text,
-				String.format("%3d", hours));
-		updateViews.setTextViewText(R.id.mins_text, String.format("%3d", mins));
-
-		long mtime = prefs.getMax(mode);
-		if (time > mtime) {
-			prefs.setMax(time, mode);
-			mtime = time;
-		}
-
-		long mdays = mtime / DateUtils.DAY_IN_MILLIS;
-		// long mdays = 123;
-		mtime -= mdays * DateUtils.DAY_IN_MILLIS;
-
-		long mhours = mtime / DateUtils.HOUR_IN_MILLIS;
-		// long mhours = 24;
-		mtime -= mhours * DateUtils.HOUR_IN_MILLIS;
-
-		long mmins = mtime / DateUtils.MINUTE_IN_MILLIS;
-		// long mmins = 55;
-		mtime -= mmins * DateUtils.MINUTE_IN_MILLIS;
-
-		// mdays = 888;
-		// mhours = 59;
-		// mmins = 59;
-
-		updateViews.setTextViewText(R.id.maxdays_text,
-				String.format("%3d", mdays));
-		updateViews.setTextViewText(R.id.maxhours_text,
-				String.format("%3d", mhours));
-		updateViews.setTextViewText(R.id.maxmins_text,
-				String.format("%3d", mmins));
-
-		updateViews.setTextViewText(R.id.uptime_text, context.getResources()
-				.getString(mode.getStringId()));
-		
-		Intent i = getUpdateIntent(context, id);
-		PendingIntent pi = PendingIntent.getBroadcast(context, 0, i, 0);
-		updateViews.setOnClickPendingIntent(R.id.widget, pi);
-		
-		return updateViews;
+		ViewBuilder builder = mode.getBuilder();
+		RemoteViews views = builder.build(context, id);
+		mgr.updateAppWidget(id, views);
 	}
 }

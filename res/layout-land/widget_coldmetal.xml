@@ -6,27 +6,24 @@
 
 	<FrameLayout android:id="@+id/frame"
 		android:layout_marginTop="10dip" android:layout_marginBottom="6dip"
-		android:layout_marginRight="16dip"
-		android:layout_height="fill_parent"
-		android:layout_width="fill_parent"
-		android:background="@drawable/coldmetal_bg"/>
-		
+		android:layout_marginRight="16dip" android:layout_height="fill_parent"
+		android:layout_width="fill_parent" android:background="@drawable/coldmetal_bg" />
+
 	<ImageView android:id="@+id/icon" android:layout_width="wrap_content"
 		android:layout_marginLeft="10dip" android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true" android:src="@drawable/icon_small" />
 
-	<TextView android:id="@+id/uptime_text"
-		android:layout_height="wrap_content" android:layout_toRightOf="@+id/icon"
-		android:layout_alignBottom="@+id/icon" android:singleLine="true"
-		android:includeFontPadding="false" style="@style/LightTransparent.Text.Caption"
-		android:layout_width="wrap_content" />
+	<TextView android:id="@+id/uptime_text" android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/icon" android:layout_alignBottom="@+id/icon"
+		android:singleLine="true" android:includeFontPadding="false"
+		style="@style/LightTransparent.Text.Caption" android:layout_width="wrap_content" />
 
 	<TextView android:id="@+id/days_text" android:text="898"
-			android:layout_marginLeft="2dip"
-		android:layout_marginTop="4dip" android:layout_below="@+id/icon"
-		android:layout_alignParentLeft="true" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:singleLine="true"
-		android:typeface="monospace" style="@style/LightTransparent.Text.ValueLand" />
+		android:layout_marginLeft="2dip" android:layout_marginTop="4dip"
+		android:layout_below="@+id/icon" android:layout_alignParentLeft="true"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:singleLine="true" android:typeface="monospace"
+		style="@style/LightTransparent.Text.ValueLand" />
 
 	<TextView android:id="@+id/days_label" android:text="@string/days"
 		android:layout_width="wrap_content" android:layout_alignTop="@+id/days_text"
@@ -61,11 +58,11 @@
 		style="@style/LightTransparent.Text.LabelLand" />
 
 	<TextView android:id="@+id/maxdays_text" android:text="898"
-			android:layout_marginLeft="2dip"
-		android:layout_marginTop="2dip" android:layout_below="@+id/days_text"
-		android:layout_alignParentLeft="true" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:singleLine="true"
-		android:typeface="monospace" style="@style/LightTransparent.Text.ValueLandMax" />
+		android:layout_marginLeft="2dip" android:layout_marginTop="2dip"
+		android:layout_below="@+id/days_text" android:layout_alignParentLeft="true"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:singleLine="true" android:typeface="monospace"
+		style="@style/LightTransparent.Text.ValueLandMax" />
 
 	<TextView android:id="@+id/maxdays_label" android:text="@string/days"
 		android:layout_width="wrap_content" android:layout_alignTop="@id/maxdays_text"

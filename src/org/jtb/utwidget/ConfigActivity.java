@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 
 public class ConfigActivity extends Activity {
 	private Prefs mPrefs;
@@ -22,7 +24,7 @@ public class ConfigActivity extends Activity {
 	private Button mFinishedButton;
 	
 	private Mode mMode = Mode.UPTIME;
-	private String mTheme = "darktransparent";
+	private Theme mTheme = Theme.DARKTRANSPARENT;
 	
 	private int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
 	
@@ -47,45 +49,50 @@ public class ConfigActivity extends Activity {
         }
 		mPrefs = new Prefs(this);
 
-		OnClickListener themeOcl = new OnClickListener() {
+		Spinner themeSpinner = (Spinner) findViewById(R.id.theme_spinner);
+		ArrayAdapter<DisplayTheme> dtAdapter = new ArrayAdapter<DisplayTheme>(
+				this, android.R.layout.simple_spinner_item, Theme
+						.toDisplayThemes(this));
+		dtAdapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		themeSpinner.setAdapter(dtAdapter);
+		themeSpinner.setSelection(0);
+		themeSpinner.setSelected(false);
+		themeSpinner
+				.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+					public void onItemSelected(AdapterView parent, View v,
+							int position, long id) {
+						DisplayTheme dt = (DisplayTheme) parent
+								.getSelectedItem();
+						mTheme = dt.getTheme();
+					}
 
-			@Override
-			public void onClick(View v) {
-				mTheme = (String)v.getTag();
-			}
-		};
+					public void onNothingSelected(AdapterView parent) {
+					}
+				});
 
-		mDarkTransparentRadioButton = (RadioButton) findViewById(R.id.darkTransparentRadioButton);
-		mDarkTransparentRadioButton.setOnClickListener(themeOcl);
-		mDarkTransparentRadioButton.setChecked(true);
-		
-		mDarkTranslucentRadioButton = (RadioButton) findViewById(R.id.darkTranslucentRadioButton);
-		mDarkTranslucentRadioButton.setOnClickListener(themeOcl);
+		Spinner modeSpinner = (Spinner) findViewById(R.id.mode_spinner);
+		ArrayAdapter<DisplayMode> dmAdapter = new ArrayAdapter<DisplayMode>(
+				this, android.R.layout.simple_spinner_item, Mode
+						.toDisplayModes(this));
+		dmAdapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		modeSpinner.setAdapter(dmAdapter);
+		modeSpinner.setSelection(0);
+		themeSpinner.setSelected(false);
+		modeSpinner
+				.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+					public void onItemSelected(AdapterView parent, View v,
+							int position, long id) {
+						DisplayMode dm = (DisplayMode) parent
+								.getSelectedItem();
+						mMode = dm.getMode();
+					}
 
-		mLightTransparentRadioButton = (RadioButton) findViewById(R.id.lightTransparentRadioButton);
-		mLightTransparentRadioButton.setOnClickListener(themeOcl);
+					public void onNothingSelected(AdapterView parent) {
+					}
+				});
 
-		mLightTranslucentRadioButton = (RadioButton) findViewById(R.id.lightTranslucentRadioButton);
-		mLightTranslucentRadioButton.setOnClickListener(themeOcl);
-
-		mColdMetalRadioButton = (RadioButton) findViewById(R.id.coldMetalRadioButton);
-		mColdMetalRadioButton.setOnClickListener(themeOcl);
-		
-		OnClickListener modeOcl = new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				mMode = Mode.valueOf((String)v.getTag());
-			}
-		};
-
-		mUptimeRadioButton = (RadioButton) findViewById(R.id.uptimeRadioButton);
-		mUptimeRadioButton.setOnClickListener(modeOcl);
-		mUptimeRadioButton.setChecked(true);
-		
-		mWaketimeRadioButton = (RadioButton) findViewById(R.id.waketimeRadioButton);
-		mWaketimeRadioButton.setOnClickListener(modeOcl);
-		
 		mFinishedButton = (Button) findViewById(R.id.config_finished_button);
 		mFinishedButton.setOnClickListener(new OnClickListener() {
 			@Override

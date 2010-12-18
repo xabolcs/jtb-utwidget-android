@@ -72,12 +72,14 @@ public class Prefs {
 		setLong("max." + mode.toString(), max);
 	}
 
-	public String getTheme(int id) {
-		return getString("theme." + id, "lighttransparent");
+	public Theme getTheme(int id) {
+		String s = getString("theme." + id, "lighttransparent");
+		s = s.toUpperCase();
+		return Theme.valueOf(s);
 	}
 
-	public void setTheme(String theme, int id) {
-		setString("theme." + id, theme);
+	public void setTheme(Theme theme, int id) {
+		setString("theme." + id, theme.toString());
 	}
 
 	public Mode getMode(int id) {
