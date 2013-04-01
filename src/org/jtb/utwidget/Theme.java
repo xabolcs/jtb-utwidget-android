@@ -7,10 +7,7 @@ import android.content.Context;
 import android.util.Log;
 
 enum Theme {
-	DARKTRANSPARENT(R.string.DARKTRANSPARENT), LIGHTTRANSPARENT(
-			R.string.LIGHTTRANSPARENT), DARKTRANSLUCENT(
-			R.string.DARKTRANSLUCENT), LIGHTTRANSLUCENT(
-			R.string.LIGHTTRANSLUCENT), COLDMETAL(R.string.COLDMETAL);
+	COLDMETAL(R.string.COLDMETAL);
 
 	private int titleId;
 

@@ -11,7 +11,7 @@
 	</style>
 
 	<style name="LightTransparent.Background">
-		<item name="android:background">@android:color/transparent</item>
+		<item name="android:background">@drawable/coldmetal_bg</item>
 	</style>
 
 	<style name="LightTransparent.Text">
@@ -76,63 +76,6 @@
 
 	<style name="DarkTransparent.Background">
 		<item name="android:background">@android:color/transparent</item>
-	</style>
-
-	<style name="DarkTransparent.Text">
-	</style>
-
-	<style name="DarkTransparent.Text.Caption">
-		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">@color/dark</item>
-	</style>
-
-	<style name="DarkTransparent.Text.Loading">
-		<item name="android:textSize">12sp</item>
-		<item name="android:textColor">@color/dark</item>
-	</style>
-
-	<style name="DarkTransparent.Text.ValueLand">
-		<item name="android:textSize">12sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@color/dark</item>
-	</style>
-
-	<style name="DarkTransparent.Text.ValueLandMax">
-		<item name="android:textSize">12sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@color/darkmax</item>
-	</style>
-
-	<style name="DarkTransparent.Text.ValuePort">
-		<item name="android:textSize">14sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@color/dark</item>
-	</style>
-
-	<style name="DarkTransparent.Text.ValuePortMax">
-		<item name="android:textSize">14sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@color/darkmax</item>
-	</style>
-
-	<style name="DarkTransparent.Text.LabelPort">
-		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">@color/dark</item>
-	</style>
-
-	<style name="DarkTransparent.Text.LabelPortMax">
-		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">@color/darkmax</item>
-	</style>
-
-	<style name="DarkTransparent.Text.LabelLand">
-		<item name="android:textSize">8sp</item>
-		<item name="android:textColor">@color/dark</item>
-	</style>
-
-	<style name="DarkTransparent.Text.LabelLandMax">
-		<item name="android:textSize">8sp</item>
-		<item name="android:textColor">@color/darkmax</item>
 	</style>
 
 	<style name="Config" />

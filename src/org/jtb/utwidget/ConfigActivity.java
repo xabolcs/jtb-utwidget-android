@@ -6,31 +6,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 
 public class ConfigActivity extends Activity {
 	private Prefs mPrefs;
-	private RadioButton mDarkTransparentRadioButton;
-	private RadioButton mLightTransparentRadioButton;
-	private RadioButton mDarkTranslucentRadioButton;
-	private RadioButton mLightTranslucentRadioButton;
-	private RadioButton mColdMetalRadioButton;
-	private RadioButton mUptimeRadioButton;
-	private RadioButton mWaketimeRadioButton;
 	private Button mFinishedButton;
 	
 	private Mode mMode = Mode.UPTIME;
-	private Theme mTheme = Theme.DARKTRANSPARENT;
+	private Theme mTheme = Theme.COLDMETAL;
 	
 	private int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.config);
 		
 	    setResult(RESULT_CANCELED);
@@ -49,28 +43,6 @@ public class ConfigActivity extends Activity {
         }
 		mPrefs = new Prefs(this);
 
-		Spinner themeSpinner = (Spinner) findViewById(R.id.theme_spinner);
-		ArrayAdapter<DisplayTheme> dtAdapter = new ArrayAdapter<DisplayTheme>(
-				this, android.R.layout.simple_spinner_item, Theme
-						.toDisplayThemes(this));
-		dtAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		themeSpinner.setAdapter(dtAdapter);
-		themeSpinner.setSelection(0);
-		themeSpinner.setSelected(false);
-		themeSpinner
-				.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-					public void onItemSelected(AdapterView parent, View v,
-							int position, long id) {
-						DisplayTheme dt = (DisplayTheme) parent
-								.getSelectedItem();
-						mTheme = dt.getTheme();
-					}
-
-					public void onNothingSelected(AdapterView parent) {
-					}
-				});
-
 		Spinner modeSpinner = (Spinner) findViewById(R.id.mode_spinner);
 		ArrayAdapter<DisplayMode> dmAdapter = new ArrayAdapter<DisplayMode>(
 				this, android.R.layout.simple_spinner_item, Mode
@@ -79,7 +51,6 @@ public class ConfigActivity extends Activity {
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		modeSpinner.setAdapter(dmAdapter);
 		modeSpinner.setSelection(0);
-		themeSpinner.setSelected(false);
 		modeSpinner
 				.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 					public void onItemSelected(AdapterView parent, View v,
