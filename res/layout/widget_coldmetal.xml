@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" >
+
+    <FrameLayout
+        android:id="@+id/frame"
+        style="@style/LightTransparent.Background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="8dip" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/icon_small" />
+
+    <TextView
+        android:id="@+id/uptime_text"
+        style="@style/LightTransparent.Text.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/icon"
+        android:layout_toRightOf="@+id/icon"
+        android:includeFontPadding="false"
+        android:singleLine="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="24dp"
+        android:focusable="true" >
+
+        <TextView
+            android:id="@+id/days_text"
+            style="@style/LightTransparent.Text.ValueLand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/icon"
+            android:layout_below="@id/icon"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="898d"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/hours_text"
+            style="@style/LightTransparent.Text.ValueLand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/days_text"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="23h"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/mins_text"
+            style="@style/LightTransparent.Text.ValueLand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/hours_text"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="59s"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/maxdays_text"
+            style="@style/LightTransparent.Text.ValueLandMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/days_text"
+            android:layout_below="@id/days_text"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="898d"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/maxhours_text"
+            style="@style/LightTransparent.Text.ValueLandMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/hours_text"
+            android:layout_below="@id/hours_text"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="12h"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/maxmins_text"
+            style="@style/LightTransparent.Text.ValueLandMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/mins_text"
+            android:layout_below="@id/mins_text"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="1s"
+            android:typeface="monospace" />
+    </RelativeLayout>
+</RelativeLayout>

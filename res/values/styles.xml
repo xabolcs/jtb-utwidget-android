@@ -3,7 +3,7 @@
 	<style name="Text" />
 
 	<style name="Text.Percent">
-		<item name="android:textSize">16sp</item>
+		<item name="android:textSize">@dimen/percent_size</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 
@@ -18,67 +18,28 @@
 	</style>
 
 	<style name="LightTransparent.Text.Caption">
-		<item name="android:textSize">10sp</item>
+		<item name="android:textSize">10dp</item>
 		<item name="android:textColor">@color/light</item>
 	</style>
 
 	<style name="LightTransparent.Text.Loading">
-		<item name="android:textSize">12sp</item>
+		<item name="android:textSize">@dimen/value_size</item>
 		<item name="android:textColor">@color/light</item>
 	</style>
 
 	<style name="LightTransparent.Text.ValueLand">
-		<item name="android:textSize">12sp</item>
+		<item name="android:textSize">@dimen/value_size</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">@color/light</item>
 	</style>
 
 	<style name="LightTransparent.Text.ValueLandMax">
-		<item name="android:textSize">12sp</item>
+		<item name="android:textSize">@dimen/value_size</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">@color/lightmax</item>
 	</style>
 
-	<style name="LightTransparent.Text.ValuePort">
-		<item name="android:textSize">14sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@color/light</item>
-	</style>
-
-	<style name="LightTransparent.Text.ValuePortMax">
-		<item name="android:textSize">14sp</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textColor">@color/lightmax</item>
-	</style>
-
-	<style name="LightTransparent.Text.LabelPort">
-		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">@color/light</item>
-	</style>
-
-	<style name="LightTransparent.Text.LabelPortMax">
-		<item name="android:textSize">10sp</item>
-		<item name="android:textColor">@color/lightmax</item>
-	</style>
-
-	<style name="LightTransparent.Text.LabelLand">
-		<item name="android:textSize">8sp</item>
-		<item name="android:textColor">@color/light</item>
-	</style>
-
-	<style name="LightTransparent.Text.LabelLandMax">
-		<item name="android:textSize">8sp</item>
-		<item name="android:textColor">@color/lightmax</item>
-	</style>
-
-	<style name="DarkTransparent">
-	</style>
-
-	<style name="DarkTransparent.Background">
-		<item name="android:background">@android:color/transparent</item>
-	</style>
-
-	<style name="Config" />
+		<style name="Config" />
 
 	<style name="Config.Title">
 		<item name="android:textSize">18dp</item>

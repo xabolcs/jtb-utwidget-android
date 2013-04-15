@@ -1,5 +1,6 @@
 package org.jtb.utwidget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -42,10 +43,10 @@ public class Prefs {
 		e.putString(key, Long.toString(val));
 		e.commit();
 	}
-	
+
 	private void remove(String key) {
 		SharedPreferences prefs = PreferenceManager
-		.getDefaultSharedPreferences(context);
+				.getDefaultSharedPreferences(context);
 		Editor e = prefs.edit();
 		e.remove(key);
 		e.commit();
@@ -56,7 +57,7 @@ public class Prefs {
 		// if the user has the legacy preference
 		// "maxUptime", set it in the new format
 		// and remove the old legacy pref
-		
+
 		if (mode == Mode.UPTIME) {
 			long maxUptime = getLong("maxUptime", -1);
 			if (maxUptime != -1) {
@@ -64,7 +65,7 @@ public class Prefs {
 				remove("maxUptime");
 			}
 		}
-		
+
 		return getLong("max." + mode.toString(), 0);
 	}
 
@@ -72,10 +73,15 @@ public class Prefs {
 		setLong("max." + mode.toString(), max);
 	}
 
+	@SuppressLint("DefaultLocale")
 	public Theme getTheme(int id) {
-		String s = getString("theme." + id, "lighttransparent");
+		String s = getString("theme." + id, "coldmetal");
 		s = s.toUpperCase();
-		return Theme.valueOf(s);
+		try {
+			return Theme.valueOf(s);
+		} catch (IllegalArgumentException e) {
+			return Theme.COLDMETAL;
+		}
 	}
 
 	public void setTheme(Theme theme, int id) {

@@ -1,36 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/widget"
-    style="@style/LightTransparent.Background"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:focusable="true" >
 
     <FrameLayout
         android:id="@+id/frame"
+        style="@style/LightTransparent.Background"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginBottom="6dip"
-        android:layout_marginRight="16dip"
-        android:layout_marginTop="10dip" >
-
-        <TextView
-            android:id="@+id/percent_text"
-            style="@style/Text.Percent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:singleLine="true"
-            android:text="98.1%"
-            android:typeface="monospace" />
-    </FrameLayout>
+        android:layout_margin="8dip" />
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="16dp"
         android:src="@drawable/icon_small" />
 
     <TextView
@@ -42,5 +29,23 @@
         android:layout_toRightOf="@+id/icon"
         android:includeFontPadding="false"
         android:singleLine="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:focusable="true" >
+
+        <TextView
+            android:id="@+id/percent_text"
+            style="@style/Text.Percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="98.1%"
+            android:typeface="monospace" />
+    </RelativeLayout>
 
 </RelativeLayout>

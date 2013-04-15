@@ -8,20 +8,23 @@
         android:id="@+id/mode_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:layout_alignLeft="@id/mode_layout"
         android:layout_below="@id/mode_layout"
         android:orientation="horizontal" >
 
         <TextView
             style="@style/Config.Title"
-            android:layout_width="64dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:paddingTop="8dp"
-            android:text="Mode" />
+            android:text="@string/mode" />
 
         <Spinner
             android:id="@+id/mode_spinner"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
             android:layout_height="wrap_content" >
         </Spinner>
     </LinearLayout>
@@ -32,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/mode_layout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/finished" />
 
 </RelativeLayout>

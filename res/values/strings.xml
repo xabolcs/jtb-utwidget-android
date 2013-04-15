@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-<string name="app_name">Uptime Widget</string>
-<string name="widget_name">Uptime Widget</string>
-<string name="days">d</string>
-<string name="mins">m</string>
-<string name="hours">h</string>
-<string name="widget_loading">Loading ...</string>
-<string name="finished">Finished</string>
-<string name="uptime">uptime</string>
-<string name="waketime">wktime</string>
-<string name="wakepercent">wake%</string>
-<string name="LIGHTTRANSPARENT">Light, Transparent</string>
-<string name="DARKTRANSPARENT">Dark, Transparent</string>
-<string name="LIGHTTRANSLUCENT">Light, Translucent</string>
-<string name="DARKTRANSLUCENT">Dark, Translucent</string>
-<string name="COLDMETAL">Cold Metal</string>
-<string name="UPTIME">Up Time</string>
-<string name="WAKETIME">Wake Time</string>
-<string name="WAKEPERCENT">Wake Percent</string>
+
+    <string name="app_name">Uptime widget</string>
+    <string name="widget_name">Uptime widget</string>
+    <string name="widget_loading">Loading ...</string>
+    <string name="finished">Finished</string>
+    <string name="uptime">uptime</string>
+    <string name="waketime">waketime</string>
+    <string name="wakepercent">wake%</string>
+    <string name="COLDMETAL">Cold metal</string>
+    <string name="UPTIME">Up time</string>
+    <string name="WAKETIME">Wake time</string>
+    <string name="WAKEPERCENT">Wake percent</string>
+    <string name="mode">Mode</string>
+
 </resources>

@@ -40,10 +40,10 @@ abstract class SystemClockBuilder extends ViewBuilder {
 		// hours = 59;
 		// mins = 59;
 
-		updateViews.setTextViewText(R.id.days_text, String.format("%3d", days));
+		updateViews.setTextViewText(R.id.days_text, String.format("%3dd", days));
 		updateViews.setTextViewText(R.id.hours_text,
-				String.format("%3d", hours));
-		updateViews.setTextViewText(R.id.mins_text, String.format("%3d", mins));
+				String.format("%02dh", hours));
+		updateViews.setTextViewText(R.id.mins_text, String.format("%02dm", mins));
 
 		long mtime = prefs.getMax(mode);
 		if (time > mtime) {
@@ -68,11 +68,11 @@ abstract class SystemClockBuilder extends ViewBuilder {
 		// mmins = 59;
 
 		updateViews.setTextViewText(R.id.maxdays_text,
-				String.format("%3d", mdays));
+				String.format("%3dd", mdays));
 		updateViews.setTextViewText(R.id.maxhours_text,
-				String.format("%3d", mhours));
+				String.format("%02dh", mhours));
 		updateViews.setTextViewText(R.id.maxmins_text,
-				String.format("%3d", mmins));
+				String.format("%02dm", mmins));
 
 		updateViews.setTextViewText(R.id.uptime_text, mode.getShortTitle(context));
 		

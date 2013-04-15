@@ -3,5 +3,6 @@
     android:configure="org.jtb.utwidget.ConfigActivity"
     android:initialLayout="@layout/widget_loading"
     android:minHeight="56dp"
-    android:minWidth="56dp"
+    android:minResizeHeight="56dp"
+    android:minWidth="110dp"
     android:updatePeriodMillis="0" />
